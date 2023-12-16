@@ -1,0 +1,75 @@
+.container{
+    display: flex;
+    /* width: 20%; */
+    flex-direction: column;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.btn img{
+    width: 150px;
+}
+.modal{
+    z-index: 99999999;
+}
+.content_pos{
+    top: 10%;
+    left: 34%;
+    z-index: 999999990;
+    border-radius: 4px;
+}
+.container h1{
+    /* width: 100%; */
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.container .pay_items{
+    display: flex;
+    /* width: 100%; */
+    justify-content: center;
+    align-items: center;
+}
+
+.container .pay_items .item {
+    /* width: 30%; */
+    margin: 5px;
+}
+
+.container .pay_items .item .btn  {
+    /* width: 100%; */
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.container .pay_items .item .btn img{
+    /* width: 100%; */
+    position: relative;
+}
+.Button{
+    margin-top: 20px;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+.pay_items_notLogin{
+
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+input[type=number].Input::-webkit-inner-spin-button,
+input[type=number].Input::-webkit-outer-spin-button {  
+    opacity: 0;
+ }
+.Input{
+    width: 400px !important;
+}
+.price{
+    color: #40513B;
+    font-weight: 700;
+}

@@ -1,0 +1,23 @@
+.parent{
+    padding: 120px 60px;
+}
+.list{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    gap: 120px;
+}
+.item{
+    text-align: center;
+    box-shadow: 4px 4px 20px #a1a1a1;
+    padding: 60px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.item img{
+    /* width: 80px; */
+    flex: 1;
+}

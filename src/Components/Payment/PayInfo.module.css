@@ -1,0 +1,39 @@
+.modal{
+    z-index: 999999990;
+}
+.content_pos{
+    top: 10%;
+    left: 34%;
+    z-index: 999999999;
+    border-radius: 4px;
+}
+.container{
+    display: flex;
+    /* width: 20%; */
+    flex-direction: column;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+input[type=number].Input::-webkit-inner-spin-button,
+input[type=number].Input::-webkit-outer-spin-button {  
+    opacity: 0;
+ }
+.Input{
+    width: 400px !important;
+}
+.price{
+    color: #40513B;
+    font-weight: 700;
+}
+.Button{
+    margin-top: 20px;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}

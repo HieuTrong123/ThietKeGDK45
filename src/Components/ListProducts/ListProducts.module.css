@@ -1,0 +1,23 @@
+.list{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    /* column-gap: 40px; */
+    justify-content: space-between;
+}
+.list li{
+    width: 23.3%;
+}
+.more{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+   
+}
+.more a{
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--mainColor);
+}

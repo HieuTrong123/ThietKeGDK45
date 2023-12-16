@@ -1,0 +1,16 @@
+.button{
+    padding:7px 10px 4px 10px;
+    font-size: 18px;
+    border: 2px solid var(--mainColor);
+    border-radius: 4px;
+    color: var(--mainColor);
+    background-color: transparent;
+}
+.button+.button{
+    margin-left: 20px;
+}
+.button:hover{
+    background-color: var(--mainColor);
+    color: #f0f0f0;
+    cursor: pointer;
+}

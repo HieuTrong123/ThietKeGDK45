@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+.body{
+    font-family: 'Inter', sans-serif;
+    /* overflow: hidden; */
+    top: 50vh;
+    left: 50vw;
+    
+}
+
+.container{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    /* height: 450px; */
+}
+
+.container h1{
+    text-align: center;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid silver;
+    font-size: 40px;
+}
+
+.container form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 18px;
+    transition: .5s ;
+}
+
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #79AC78;
+    transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: #79AC78;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    background-color: #618264;
+    border-radius: 4px;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.signup_link{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 18px;
+    color: #666666;
+    /* padding-bottom: 20px; */
+}
+.signup_link a{
+    color: #618264;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.signup_link a:hover{
+    text-decoration: underline;
+}
+
+.txt_field_false label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: red;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 18px;
+    transition: .5s ;
+}
+
+.txt_field_false span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: red;
+    transition: .5s;
+}
+
+.txt_field_false input:focus ~ label,
+.txt_field_false input:valid ~ label{
+    top: -5px;
+    color: red;
+}

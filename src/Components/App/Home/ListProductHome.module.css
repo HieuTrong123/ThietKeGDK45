@@ -1,0 +1,17 @@
+.parent{
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-size: 94px;
+}
+.head{
+    margin-bottom: 60px;
+}
+
+.name{
+    font-weight: 400;
+}

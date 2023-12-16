@@ -1,0 +1,27 @@
+.input{
+    border: 1px solid #79AC78;
+    padding: 8px 20px;
+    border-radius: 4px 0 0 4px;
+    margin: 20px 0;
+    color: var(--mainColor);
+    width: 90%;
+}
+.button{
+    width: 10%;
+    padding: 7px 0 7px 0;
+    background-color: var(--mainColor);
+    border-radius: 0 4px 4px 0;
+}
+.button i{
+    
+    color: #f0f0f0;
+    cursor: pointer;
+}
+.input:focus-visible{
+    outline: 1px solid var(--mainColor);
+}
+.search{
+    flex:15;
+    display: flex;
+    align-items: center;
+}

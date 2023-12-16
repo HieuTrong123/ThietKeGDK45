@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+.container{
+    width: 100%;
+    margin: 200px 0;
+}
+
+.container h1{
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+}
+
+.container .info{
+    padding: 30px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 40px;
+}
+.ava_box{
+    margin-top: 20px;
+}
+.container .info .ava_box{
+    width: 20%;
+    padding-right: 20px;
+}
+
+.container .info .ava_box img{
+    width: 80%;
+    margin-bottom: 25px;
+}
+
+.container .info .ava_box .change{
+    width: 80%;
+}
+.Button{
+    width: 600px !important;
+}
+.txt_field{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}

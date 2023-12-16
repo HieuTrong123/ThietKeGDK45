@@ -1,0 +1,31 @@
+:root{
+  --marginNav: 139.81px;
+  --mainColor: #618264;
+}
+*{
+  font-size: 22px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+i{
+  color: var(--mainColor);
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+  color: var(--mainColor);
+}
+
+a.active{
+  background-color: var(--mainColor);
+  border-radius: 4px;
+  cursor: pointer;
+}
+a.active *{
+  color: #f0f0f0;
+}
+ul{
+  list-style: none;
+}

@@ -1,0 +1,23 @@
+.content_pos{
+    top: 20%;
+    left: 35.5%;
+    z-index: 999999999999;
+    border-radius: 4px;
+}
+.modal{
+    z-index: 9999999992;
+    
+}
+.contain{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.Button{
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}

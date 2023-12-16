@@ -1,0 +1,32 @@
+.intro{
+    width: 100vw;
+    height: 400px;
+    background-image: url('../../../assets/Background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: var(--marginNav);
+    padding: 60px 80px;
+}
+
+.intro h2{
+    font-size: 94px;
+    color: var(--mainColor);
+    color: #f0f0f0;
+}
+.intro h3{
+    color: var(--mainColor);
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+.btn{
+    width: 120px;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #f0f0f0 !important;
+    border: 2px solid #fff !important;
+}
+.btn:hover{
+    background-color: transparent !important;
+}
