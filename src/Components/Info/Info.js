@@ -3,7 +3,7 @@ import classes from './Info.module.css'
 import Button from '../UI/Button/Button'
 import Navbar from '../UI/Navbar/Navbar';
 import Footer from '../UI/Footer/Footer';
-import img from '/Tài liệu học tập/2023-2024 DLU/ThietKeGD/food-app/src/assets/potrait.jpg';
+// import img from '../../assets/potrait.jdg';
 import Input from '../UI/Input/Input';
 import { UserContext } from '../../Context/Context';
 export default function Info() {
