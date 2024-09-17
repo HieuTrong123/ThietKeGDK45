@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes"
 import { authServices } from "~/services/authServices"
 
-const registerUser=async(req,res,next)=>{
+const registerUser = async (req, res, next) => {
     try {
         console.log(req.body)
         const createdUser = await authServices.registerUser(req.body)
@@ -10,7 +10,7 @@ const registerUser=async(req,res,next)=>{
         next(error)
     }
 }
-const loginUser=async(req,res,next)=>{
+const loginUser = async (req, res, next) => {
     try {
         // console.log(req.body)
         const logedInUser = await authServices.loginUser(req.body)
@@ -19,8 +19,6 @@ const loginUser=async(req,res,next)=>{
         next(error)
     }
 }
-
-
 export const authControllers = {
     registerUser,
     loginUser
