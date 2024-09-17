@@ -12,9 +12,7 @@ const USER_COLLECTION_SCHEMA = Joi.object({
     password: Joi.string().required().min(8).trim().strict(),
     fullName: Joi.string().optional().min(3).trim().strict(),
     phoneNumber: Joi.string().required().pattern(PHONENUMBER_RULE).trim().strict(),
-    roleId: Joi.array().items(
-        Joi.string().pattern(OBJECT_ID_RULE).message(OBJECT_ID_RULE_MESSAGE)
-    ).default([]),
+    roleId: Joi.string().required().pattern(OBJECT_ID_RULE).message(OBJECT_ID_RULE_MESSAGE),
     shopOrderIds: Joi.array().items(
         Joi.string().pattern(OBJECT_ID_RULE).message(OBJECT_ID_RULE_MESSAGE)
     ).default([]),

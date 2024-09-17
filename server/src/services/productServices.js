@@ -36,6 +36,7 @@ const getDetails = async (prodId) => {
         })
         return prod
     } catch (error) {
+        console.log(error)
         throw error
     }
 }
