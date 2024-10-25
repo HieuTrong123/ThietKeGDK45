@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import classes from './Payment.module.css';
 import Card from '../../assets/card.png';
 import Hand from '../../assets/hand.png';
@@ -6,12 +6,12 @@ import Visa from '../../assets/visa.png';
 import PayPal from '../../assets/paypal.png';
 import Button from '../UI/Button/Button';
 import Modal from '../Modal/Modal';
-import { UserContext } from '../../Context/Context';
+import { useSelector, useDispatch } from 'react-redux'
 import Input from '../UI/Input/Input';
 import PayInfo from './PayInfo';
 import MessageBox from './MessageBox';
 export default function Payment(props) {
-    const [state, dispatch] = useContext(UserContext);
+    const login = useSelector((state) => state.user.stateLogIn)
     const [form, setForm] = useState({
         name: '',
         phone: '',
@@ -41,7 +41,7 @@ export default function Payment(props) {
         <Modal onClick={props.setState} className={classes.content_pos} Modal={classes.modal} state={props.state}>
 
             {props.state ?
-                (state.stateLogIn ?
+                (login ?
                     (<div className={classes.container}>
                         <PayInfo state={payInfo} setState={TogglePayInfo} />
                         <h1>Pay Method</h1>

@@ -1,12 +1,12 @@
-import React, { useState, useRef, useContext } from 'react'
+import React, { useState, useRef } from 'react'
 import classes from './Login.module.css'
 import Modal from '../Modal/Modal'
-import { UserContext } from '../../Context/Context'
-import { IsLogged } from '../../Context/f_actions'
+import { useSelector, useDispatch } from 'react-redux'
+import { IsLogged } from '../../Redux/userSlice'
 import { Users } from '../../store/user'
 import { useNavigate } from 'react-router-dom'
 export default function Login(props) {
-    const [state, dispatch] = useContext(UserContext);
+    const dispatch = useDispatch()
     const [emailValidate, setEmailValidate] = useState(true)
     const [password, setPasswordValidate] = useState(true)
     const [warnEmail, setWarnEmail] = useState('')
@@ -31,7 +31,6 @@ export default function Login(props) {
     function HanhdleSubmit(e) {
         e.preventDefault();
         const user = Users.find(item => item.email === form.email)
-        console.log(user);
         if (user) {
             setEmailValidate(true);
             setWarnEmail('')

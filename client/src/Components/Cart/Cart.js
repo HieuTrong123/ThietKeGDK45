@@ -1,17 +1,18 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import classes from './Cart.module.css'
 import iconDelete from '../../assets/iconDelete.png'
 import Button from '../UI/Button/Button'
-import { UserContext } from '../../Context/Context'
-import { RemoveItemCart } from '../../Context/f_actions'
 import cart_null from '../../assets/cart_null.png'
 import Payment from '../Payment/Payment'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { AddItemCart, RemoveItemCart } from '../../Redux/userSlice'
 export default function Cart(props) {
-    const [state, dispatch] = useContext(UserContext);
+    const carts = useSelector((state) => state.user.listCart || [])
+    const dispatch = useDispatch()
 
-    const cartProduct = state.listCart;
+    const cartProduct = carts;
     function HanhdleDelete(id) {
         dispatch(RemoveItemCart(id));
     }
@@ -25,25 +26,27 @@ export default function Cart(props) {
             <Payment state={Pay} setState={TogglePay} />
             <div className={classes.contain}>
                 {
-                    state.listCart.length !== 0 ? (
-                        <>
-                            <ul className={classes.cart} >
-                                {cartProduct.map((e) =>
-                                    <li className={classes.product} key={e.id}>
-                                        <div className={classes.product_contain}>
-                                            <img className={classes.product_img} src={e.img} />
-                                            <div>
-                                                <p className={classes.product_name}>{e.name}</p>
-                                                <p className={classes.product_quantity}>{e.quantity}</p>
-                                                <p className={classes.product_price}>{e.price}</p>
+                    carts.length !== 0
+                        ?
+                        (
+                            <>
+                                <ul className={classes.cart} >
+                                    {cartProduct.map((e) =>
+                                        <li className={classes.product} key={e.id}>
+                                            <div className={classes.product_contain}>
+                                                <img className={classes.product_img} src={e.img} />
+                                                <div>
+                                                    <p className={classes.product_name}>{e.name}</p>
+                                                    <p className={classes.product_quantity}>{e.quantity}</p>
+                                                    <p className={classes.product_price}>{e.price}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <img onClick={() => { HanhdleDelete(e.id) }} className={classes.product_delete} src={iconDelete} />
-                                    </li>)}
-                            </ul>
-                            <Button onClick={TogglePay} className={classes.button}>PAY</Button>
-                        </>
-                    ) :
+                                            <img onClick={() => { HanhdleDelete(e.id) }} className={classes.product_delete} src={iconDelete} />
+                                        </li>)}
+                                </ul>
+                                <Button onClick={TogglePay} className={classes.button}>PAY</Button>
+                            </>
+                        ) :
                         (
                             <>
                                 <div className={classes.cartNull}>

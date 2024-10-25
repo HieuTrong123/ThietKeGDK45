@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react'
+import React, { useState, useRef } from 'react'
 import classes from './Register.module.css'
 import Modal from '../Modal/Modal'
 // import { Users } from '../../store/user'

@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import classes from './AvatarWindow.module.css';
 import Button from '../UI/Button/Button';
 import Modal from '../Modal/Modal';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserContext } from '../../Context/Context'
-import { IsLogOut } from '../../Context/f_actions'
+import { useSelector, useDispatch } from 'react-redux';
+import { IsLogged, IsLogOut } from '../../Redux/userSlice';
 export default function AvatarWindow(props) {
-    const [state, dispatch] = useContext(UserContext);
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     function HandleClick() {
         dispatch(IsLogOut());
         props.setState();

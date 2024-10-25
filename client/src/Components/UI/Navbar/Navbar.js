@@ -1,20 +1,22 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import classes from './Navbar.module.css'
 import logo from '../../../assets/logo.png'
 import Button from '../Button/Button'
 import Search from './Search'
 import { Link, NavLink } from 'react-router-dom'
 import Cart from '../../Cart/Cart'
-import { UserContext } from '../../../Context/Context'
+import { useSelector, useDispatch } from 'react-redux'
 import notifiIcon from '../../../assets/notifiIcon.png'
 import Login from '../../Login/Login'
 import Register from '../../Register/Register'
 import AvatarWindow from '../../AvatarWindow/AvatarWindow'
 import Notification from '../../Notification/Notification'
 export default function Navbar() {
+    const user = useSelector((state) => state.user.user)
+    const isLogin = useSelector((state) => state.user.stateLogIn)
+    const cartsUser = useSelector((state) => state.user.listCart)
 
-    const [state, dispatch] = useContext(UserContext);
-
+    const dispatch = useDispatch()
     const [login, setLogin] = useState(false);
 
     const [register, setRegister] = useState(false);
@@ -63,11 +65,11 @@ export default function Navbar() {
                     </NavLink>
                 </ul>
                 {
-                    state.stateLogIn ?
+                    isLogin ?
                         (
                             <div className={classes.navlogin}>
                                 <img onClick={HandleNotify} className={classes.notify} src={notifiIcon} />
-                                <img onClick={HandleAvatar} className={classes.avt} src={state.user.avt} />
+                                <img onClick={HandleAvatar} className={classes.avt} src={user.avt} />
                             </div>
                         )
                         :
@@ -86,7 +88,12 @@ export default function Navbar() {
                 <div className={classes.cart}>
                     <div className={classes.cartIcon}>
                         <i className="fa-solid fa-cart-shopping" onClick={ToggleCart}></i>
-                        <span className={classes.cartNumble}>{state.listCart.length}</span>
+
+                        <span className={classes.cartNumble}>
+                            {
+                                cartsUser.length
+                            }
+                        </span>
                     </div>
 
                 </div>

@@ -7,7 +7,7 @@ export default function ItemProduct(props) {
     return (
         <div className={classes.item}>
             <div className={classes.vote}>
-                <i class="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
                 <span>{props.vote}</span>
             </div>
             <img className={classes.image} src={props.image} />

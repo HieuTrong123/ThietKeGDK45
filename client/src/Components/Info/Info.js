@@ -1,18 +1,20 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import classes from './Info.module.css'
 import Button from '../UI/Button/Button'
 import Navbar from '../UI/Navbar/Navbar';
 import Footer from '../UI/Footer/Footer';
 // import img from '../../assets/potrait.jdg';
 import Input from '../UI/Input/Input';
-import { UserContext } from '../../Context/Context';
+import { useSelector, useDispatch } from 'react-redux'
+import { IsLogged, IsLogOut } from '../../Redux/userSlice'
 export default function Info() {
-    const [state, dispatch] = useContext(UserContext);
+    const user = useSelector((state) => state.user.user)
+    const dispatch = useDispatch()
     const [form, setForm] = useState({
-        name: state.user.name,
+        name: user.name,
         phone: "",
-        email: state.user.email,
-        password: state.user.pwd,
+        email: user.email,
+        password: user.pwd,
         address: "",
     });
     const onUpdateField = e => {
@@ -29,7 +31,7 @@ export default function Info() {
                 <h1>INFORMATION</h1>
                 <div className={classes.info}>
                     <div className={classes.ava_box}>
-                        <img src={state.user.avt} />
+                        <img src={user.avt} />
                         <Button className={classes.change}>Change Avatar</Button>
                     </div>
 

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Modal from '../Modal/Modal'
 import classes from './MessageBox.module.css'
 import iconSuccess from '../../assets/iconSuccess.png'

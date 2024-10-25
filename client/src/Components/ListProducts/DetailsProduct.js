@@ -1,12 +1,12 @@
-import React, { useEffect, useContext, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import classes from './DetailsProduct.module.css'
 import ListProducts from './ListProducts';
 import Button from '../UI/Button/Button'
 import Navbar from '../UI/Navbar/Navbar'
 import Footer from '../UI/Footer/Footer';
-import { UserContext } from '../../Context/Context';
-import { AddItemCart } from '../../Context/f_actions';
+import { useSelector, useDispatch } from 'react-redux'
+import { AddItemCart } from '../../Redux/userSlice';
 import { list_seller } from '../../store/list';
 export default function DetailsProduct() {
     useEffect(() => {
@@ -19,7 +19,8 @@ export default function DetailsProduct() {
         window.scrollTo(0, 0);
     }, [location]);
 
-    const [state, dispatch] = useContext(UserContext);
+    const cart = useSelector((state) => state.user.listCart || [])
+    const dispatch = useDispatch()
 
     const [small_size, set_small_size] = useState(true);
     const [medium_size, set_medium_size] = useState(false);
@@ -50,7 +51,7 @@ export default function DetailsProduct() {
         }
         console.log(location.state);
         const item = {
-            id: state.listCart.length,
+            id: cart.length,
             name: location.state.name,
             price: location.state.sales ? location.state.sales.salePrice : location.state.price,
             img: location.state.image,
